@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Button from '../molecules/authBtns';
 import OrderSection from '../molecules/OrderSection';
+import NextBtn from '../atoms/nextBtn';
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -36,6 +37,7 @@ const Logo = styled.div`
 
 function HomeNavBar() {
   return (
+    <div>
     <NavbarContainer>
         <Logo>CarryOn!</Logo>
         <OrderSection />
@@ -43,7 +45,9 @@ function HomeNavBar() {
          <Button />
         </div>   
     </NavbarContainer>
+    <NextBtn />
+    </div >
   )
 }
 
-export default HomeNavBar
+export default HomeNavBar;
