@@ -4,6 +4,14 @@ import Button from '../molecules/authBtns';
 import OrderSection from '../molecules/OrderSection';
 import NextBtn from '../atoms/nextBtn';
 
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space between;
+  gap: 1rem; /* Vertical gap of 1rem */
+  padding: 80px; /* Optional padding */
+`;
+
 const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -37,7 +45,7 @@ const Logo = styled.div`
 
 function HomeNavBar() {
   return (
-    <div>
+    <MainContainer>
     <NavbarContainer>
         <Logo>CarryOn!</Logo>
         <OrderSection />
@@ -46,7 +54,7 @@ function HomeNavBar() {
         </div>   
     </NavbarContainer>
     <NextBtn />
-    </div >
+    </MainContainer >
   )
 }
 

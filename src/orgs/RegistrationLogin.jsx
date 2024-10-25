@@ -31,8 +31,9 @@ const WelcomeContainer = styled.div`
 
 const WelcomeText = styled.h1`
   font-family: "Dancing Script", cursive; /* Change to your chosen font */
-  font-size: 3rem; /* Big size */
+  font-size: 2rem; /* Big size */
   font-weight: bold;
+  padding: 10px;
   transform: rotate(-5deg); /* Slanty effect */
   margin: 0; /* Remove default margin */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
