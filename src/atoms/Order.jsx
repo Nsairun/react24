@@ -23,8 +23,8 @@ const Input = styled.input`
   transition: border-color 0.3s;
 
   &:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove outline */
+    border-color: #007bff;
+    outline: none;
   }
 `;
 

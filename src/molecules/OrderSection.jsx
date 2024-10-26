@@ -9,11 +9,11 @@ const SectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 4vh;
-  background-color: white; /* White background */
+  background-color: white;
   padding: 10px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin: 20px; /* Space around the section */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 `;
 
 const WhereSection = () => {

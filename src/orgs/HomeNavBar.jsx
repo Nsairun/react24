@@ -6,10 +6,10 @@ import NextBtn from '../atoms/nextBtn';
 
 const MainContainer = styled.div`
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
+  flex-direction: column; 
   justify-content: space between;
-  gap: 1rem; /* Vertical gap of 1rem */
-  padding: 80px; /* Optional padding */
+  gap: 1rem;
+  padding: 80px;
 `;
 
 const NavbarContainer = styled.nav`
@@ -19,27 +19,27 @@ const NavbarContainer = styled.nav`
   height: 7vh;
   padding: 10px;
   width: 99%;
-  background: rgba(255, 255, 255, 0.8); /* Light transparent background */
-  backdrop-filter: blur(10px); /* Blur effect for the background */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Fix to the top */
-  top: 0; /* Position at the top */
-  left: 0; /* Align to the left */
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  position: fixed;
+  top: 0; 
+  left: 0;
+  z-index: 1000;
 `;
 
 const Logo = styled.div`
-  font-size: 2rem; /* Larger font size for impact */
+  font-size: 2rem;
   font-weight: bold;
   padding: 30px;
-  background: linear-gradient(90deg, rgba(0, 123, 255, 0.8), rgba(0, 0, 0, 0.7)); /* Light blue-black gradient */
+  background: linear-gradient(90deg, rgba(0, 123, 255, 0.8), rgba(0, 0, 0, 0.7)); 
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Text fill color transparent for gradient */
-  transition: transform 0.3s, text-shadow 0.3s; /* Transition for effects */
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s, text-shadow 0.3s;
 
   &:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    text-shadow: 0 0 10px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 0, 0, 0.5); /* Glow effect */
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
   }
 `;
 

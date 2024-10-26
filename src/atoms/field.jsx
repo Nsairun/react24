@@ -5,26 +5,26 @@ const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5px;
-  margin: 0 10px; /* Space between inputs */
+  margin: 0 10px;
 `;
 
 const Label = styled.label`
   font-size: 0.9rem;
   font-weight: bolder;
   margin-bottom: 5px;
-  color: #333; /* Darker text for labels */
+  color: #333;
 `;
 
 const Input = styled.input`
   padding: 8px;
   font-size: 0.9rem;
-  border: 1px solid #ccc; /* Light gray border */
+  border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s;
 
   &:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove outline */
+    border-color: #007bff;
+    outline: none;
   }
 `;
 

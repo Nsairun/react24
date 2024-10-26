@@ -6,7 +6,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Button = styled.button`
   display: flex;
   align-items: center;
-  background-color: #007bff; /* Blue background */
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -15,17 +15,17 @@ const Button = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
   }
 
   &:disabled {
-    background-color: #ccc; /* Gray for disabled state */
+    background-color: #ccc;
     cursor: not-allowed;
   }
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  margin-left: 5px; /* Space between text and icon */
+  margin-left: 5px;
 `;
 
 function NextBtn({onClick, disabled}) {

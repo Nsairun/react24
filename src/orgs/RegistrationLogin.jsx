@@ -11,8 +11,8 @@ const Container = styled.div`
   align-items: center;
   gap: 2rem;
   padding: 50px;
-  background-color: #f0f4f8; /* Light background color */
-  height: 100vh; /* Full height for centering */
+  background-color: #f0f4f8;
+  height: 100vh;
 `;
 
 const WelcomeContainer = styled.div`
@@ -24,19 +24,19 @@ const WelcomeContainer = styled.div`
   text-align: center;
   position: relative;
   overflow: hidden;
-  opacity: 0.9; /* Slight transparency */
-  margin: 20px auto; /* Center the container */
-  max-width: 600px; /* Limit the width */
+  opacity: 0.9;
+  margin: 20px auto;
+  max-width: 600px;
 `;
 
 const WelcomeText = styled.h1`
-  font-family: "Dancing Script", cursive; /* Change to your chosen font */
-  font-size: 2rem; /* Big size */
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
   font-weight: bold;
   padding: 10px;
-  transform: rotate(-5deg); /* Slanty effect */
-  margin: 0; /* Remove default margin */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+  transform: rotate(-5deg);
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Image = styled.div`
@@ -44,15 +44,15 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 300px; /* Adjust height as needed */
-  opacity: 0.7; /* Make the image transparent */
+  height: 300px;
+  opacity: 0.7;
   border-radius: 10px;
 `;
 
 const TabContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Space between tabs and forms */
+  margin-bottom: 20px;
 `;
 
 const Tab = styled.button`
@@ -62,28 +62,28 @@ const Tab = styled.button`
   background-color: transparent;
   border: none;
   border-radius: 5px;
-  margin-right: 15px; /* Space between tabs */
-  color: ${({ active }) => (active ? "#fff" : "#666")}; /* Active tab color */
+  margin-right: 15px;
+  color: ${({ active }) => (active ? "#fff" : "#666")};
   background-color: ${({ active }) =>
     active
       ? "#007bff"
-      : "transparent"}; /* Brighter background for active tab */
+      : "transparent"};
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    color: #fff; /* White text on hover */
+    background-color: #0056b3;
+    color: #fff;
   }
 
   &:focus {
-    outline: none; /* Remove outline */
+    outline: none;
   }
 `;
 
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 400px; /* Fixed width for forms */
+  width: 400px;
   padding: 20px;
   border-radius: 8px;
   background-color: white;
@@ -92,8 +92,8 @@ const FormContainer = styled.div`
 
 const GoogleButton = styled.button`
   padding: 10px;
-  margin-top: 15px; /* Space above Google button */
-  background-color: #007bff; /* Google red color */
+  margin-top: 15px;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -102,12 +102,12 @@ const GoogleButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #caf0f8; /* Darker red on hover */
+    background-color: #caf0f8;
     color: #007bff;
   }
 
   &:focus {
-    outline: none; /* Remove outline */
+    outline: none;
   }
 `;
 
