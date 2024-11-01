@@ -14,8 +14,18 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column; 
   justify-content: space between;
-  gap: 1rem;
-  padding: 80px;
+  height: 90vh;
+  text-align: center;
+`;
+
+const Motto = styled.p` 
+  font-family: 'Dancing Script', cursive;
+  font-size: small;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 const NavbarContainer = styled.nav`
@@ -74,6 +84,8 @@ function HomeNavBar() {
         </div>   
     </NavbarContainer>
     <NextBtn />
+    <h1>WELCOME TO OUR COMPANY!</h1>
+    <Motto>We have solution for all the safe transportation and delivery of all your goods and services.</Motto>
     <Gallery images = {images} captions= {captions} />
     </MainContainer >
   )

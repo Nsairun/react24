@@ -8,8 +8,6 @@ import Footer from './molecules/Footer';
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 20px;
   max-width: 100%;
   margin: 0 auto;
   border-radius: 8px;
