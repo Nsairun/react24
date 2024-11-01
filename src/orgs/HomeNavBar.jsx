@@ -3,6 +3,12 @@ import styled, { css } from 'styled-components';
 import Button from '../molecules/authBtns';
 import OrderSection from '../molecules/OrderSection';
 import NextBtn from '../atoms/nextBtn';
+import Gallery from '../atoms/Gallery';
+import Image1 from '../images/testimg.jpg';
+import Image2 from '../images/truck.jpg';
+import Image3 from '../images/logistics.jpeg';
+import Image4 from '../images/loginlog.png';
+
 
 const MainContainer = styled.div`
   display: flex;
@@ -44,6 +50,20 @@ const Logo = styled.div`
 `;
 
 function HomeNavBar() {
+  const images = [
+    Image1,
+    Image2,
+    Image3,
+    Image4
+  ];
+
+  const captions = [
+    "Our First Image: A Beautiful Landscape",
+    "Transporting Goods Efficiently",
+    "Logistics in Action",
+    "Our Reliable Fleet",
+  ];
+
   return (
     <MainContainer>
     <NavbarContainer>
@@ -54,6 +74,7 @@ function HomeNavBar() {
         </div>   
     </NavbarContainer>
     <NextBtn />
+    <Gallery images = {images} captions= {captions} />
     </MainContainer >
   )
 }
