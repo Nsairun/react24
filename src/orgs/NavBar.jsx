@@ -71,7 +71,7 @@ const Navbar = () => {
           <FaHome />
         </NavLink>
         <NavLink>
-         <small>Profile</small>
+         <small>Profilee</small>
           <FaUserCircle />
         </NavLink>
       </NavLinks>
