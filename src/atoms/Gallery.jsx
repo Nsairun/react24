@@ -14,7 +14,7 @@ const GalleryContainer = styled.div`
 
 const Image = styled.img`
   width: ${(props) => (props.isActive ? '50%' : '10vw')};
-  height: ${(props) => (props.isActive ? '50%' : '10vw')};
+  height: ${(props) => (props.isActive ? '100%' : '10vw')};
   object-fit: cover;
   border-radius: 5%;
   transition: width 0.3s, height 0.3s, transform 0.3s;

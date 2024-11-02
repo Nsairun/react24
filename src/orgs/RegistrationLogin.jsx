@@ -3,16 +3,31 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TextInput from "../atoms/field";
 import { FaGoogle } from "react-icons/fa";
-import logisticsImage from '../images/loginlog.png'; // Replace with the actual image path
+import logisticsImage from '../images/loginlog.png';
+import NavBar from '../orgs/NavBar';
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center children horizontally */
+  justify-content: flex-start; /* Align children to the start */
+  padding: 20px; /* Add some padding */
+  background-color: #ffffff; /* White background for the main content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 800px; /* Maximum width of the container */
+  margin: 20px auto; /* Center the container horizontally */
+`;
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 50px;
+  padding: 20px;
   background-color: #f0f4f8;
   height: 100vh;
+  width: 100%;
 `;
 
 const WelcomeContainer = styled.div`
@@ -112,9 +127,12 @@ const GoogleButton = styled.button`
 `;
 
 const RegistrationLoginPage = () => {
+ 
   const [activeTab, setActiveTab] = useState("register"); // State to manage active tab
 
   return (
+    <MainContainer>
+      <NavBar />
     <Container>
       <WelcomeContainer>
         <WelcomeText>Welcome to Our Service!</WelcomeText>
@@ -189,6 +207,7 @@ const RegistrationLoginPage = () => {
         </FormContainer>
       </div>
     </Container>
+    </MainContainer>
   );
 };
 

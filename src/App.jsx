@@ -2,7 +2,6 @@ import React from "react";
 import HomeNavBar from "./orgs/HomeNavBar";
 import LandingSection from './molecules/LandingImgSection'
 import styled from "styled-components";
-import RegistrationLoginPage from "./orgs/RegistrationLogin";
 import Footer from './molecules/Footer';
 
 const MainContainer = styled.div`
@@ -20,7 +19,6 @@ function App() {
   <MainContainer>
     <HomeNavBar />
     <LandingSection />
-    <RegistrationLoginPage />
     <Footer />
   </MainContainer>
   );

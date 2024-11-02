@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Button from '../atoms/NavBtn'
+import { useNavigate } from 'react-router-dom';
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -12,9 +13,13 @@ const ButtonContainer = styled.div`
 `;
 
 function authBtns() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate('/RegistrationLogin')
+  }
   return (
     <ButtonContainer>
-        <Button>Login</Button>
+        <Button onClick={handleNavigate}>Login</Button>
         <Button>Sign Up</Button>
     </ButtonContainer>
   )
