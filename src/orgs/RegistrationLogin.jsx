@@ -5,18 +5,19 @@ import TextInput from "../atoms/field";
 import { FaGoogle } from "react-icons/fa";
 import logisticsImage from '../images/loginlog.png';
 import NavBar from '../orgs/NavBar';
+import Testimonials from "../molecules/Testimonials";
 
 const MainContainer = styled.div`
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
-  align-items: center; /* Center children horizontally */
-  justify-content: flex-start; /* Align children to the start */
-  padding: 20px; /* Add some padding */
-  background-color: #ffffff; /* White background for the main content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Rounded corners */
-  max-width: 800px; /* Maximum width of the container */
-  margin: 20px auto; /* Center the container horizontally */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 20px auto;
 `;
 
 const Container = styled.div`
@@ -207,6 +208,7 @@ const RegistrationLoginPage = () => {
         </FormContainer>
       </div>
     </Container>
+    <Testimonials />
     </MainContainer>
   );
 };

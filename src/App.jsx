@@ -3,6 +3,7 @@ import HomeNavBar from "./orgs/HomeNavBar";
 import LandingSection from './molecules/LandingImgSection'
 import styled from "styled-components";
 import Footer from './molecules/Footer';
+import Testimonials from "./molecules/Testimonials";
 
 const MainContainer = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ function App() {
   <MainContainer>
     <HomeNavBar />
     <LandingSection />
+    <Testimonials />
     <Footer />
   </MainContainer>
   );
