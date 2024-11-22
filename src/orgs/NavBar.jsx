@@ -62,6 +62,9 @@ const Navbar = () => {
     const handleNavigate = () => {
         navigate('/');
     }
+    const handleNavigateToDash = () => {
+      navigate('UserDashboard');
+  }
   return (
     <NavbarContainer>
         <Logo>CarryOn!</Logo>
@@ -70,8 +73,8 @@ const Navbar = () => {
          <small>Home</small>
           <FaHome />
         </NavLink>
-        <NavLink>
-         <small>Profilee</small>
+        <NavLink onClick={handleNavigateToDash}>
+         <small>Profile</small>
           <FaUserCircle />
         </NavLink>
       </NavLinks>
