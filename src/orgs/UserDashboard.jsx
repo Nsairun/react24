@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useUser } from '../atoms/UserContext';
+import NavBar from './NavBar';
 
-// Styled components
 const DashboardContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -12,6 +12,10 @@ const DashboardContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `;
+
+const Nav =styled.div`
+  margin-bottom: 5%;
+`
 
 const UserProfile = styled.div`
   display: flex;
@@ -85,9 +89,6 @@ const AdminButton = styled.button`
   }
 `;
 
-// UserDashboard.js
-// ... (other component code remains the same)
-
 const ShipmentHistorySection = styled.div`
   background: linear-gradient(to right, #00b4db, #0083b0);
   padding: 30px;
@@ -141,8 +142,8 @@ const ShipmentValue = styled.span`
 `;
 
 const UserDashboard = () => {
-  const user = useUser(); // Get user from context
-  const isAdmin = user.role === 'admin'; // Check if the user is an admin
+  const user = useUser();
+  const isAdmin = user.role === 'admin';
 
   const shipmentHistory = [
     {
@@ -173,6 +174,7 @@ const UserDashboard = () => {
 
   return (
     <DashboardContainer>
+    <Nav><NavBar /></Nav>
       <UserProfile>
         <ProfilePic src={user.profilePic} alt="Profile" />
         <UserInfo>

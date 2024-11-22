@@ -63,7 +63,7 @@ const Navbar = () => {
         navigate('/');
     }
     const handleNavigateToDash = () => {
-      navigate('UserDashboard');
+      navigate('/UserDashboard');
   }
   return (
     <NavbarContainer>
