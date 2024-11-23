@@ -5,7 +5,6 @@ import TextInput from "../atoms/field";
 import { FaGoogle } from "react-icons/fa";
 import logisticsImage from '../images/loginlog.png';
 import NavBar from '../orgs/NavBar';
-import Testimonials from "../molecules/Testimonials";
 
 const MainContainer = styled.div`
   display: flex;
@@ -208,7 +207,6 @@ const RegistrationLoginPage = () => {
         </FormContainer>
       </div>
     </Container>
-    <Testimonials />
     </MainContainer>
   );
 };

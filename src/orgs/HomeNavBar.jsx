@@ -8,13 +8,15 @@ import Image1 from '../images/testimg.jpg';
 import Image2 from '../images/truck.jpg';
 import Image3 from '../images/logistics.jpeg';
 import Image4 from '../images/loginlog.png';
-
+import SideNavbar from '../atoms/SideNav';
 
 const MainContainer = styled.div`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   justify-content: space between;
-  height: 90vh;
+  height: 60%;
   text-align: center;
 `;
 
@@ -34,14 +36,11 @@ const NavbarContainer = styled.nav`
   align-items: center;
   height: 7vh;
   padding: 10px;
-  width: 99%;
+  width: 85%;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0; 
-  left: 0;
-  z-index: 1000;
 `;
 
 const Logo = styled.div`
@@ -84,6 +83,7 @@ function HomeNavBar() {
         </div>   
     </NavbarContainer>
     <NextBtn />
+    <SideNavbar />
     <h1>WELCOME TO OUR COMPANY!</h1>
     <Motto>We have solution for all the safe transportation and delivery of all your goods and services.</Motto>
     <Gallery images = {images} captions= {captions} />

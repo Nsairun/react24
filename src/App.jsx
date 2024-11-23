@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Footer from './molecules/Footer';
 import Testimonials from "./molecules/Testimonials";
 
-const MainContainer = styled.div`
+const MainContainer1 = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -14,15 +14,14 @@ const MainContainer = styled.div`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
-
 function App() {
   return (
-  <MainContainer>
-    <HomeNavBar />
+  <MainContainer1>
+      <HomeNavBar />
     <LandingSection />
     <Testimonials />
     <Footer />
-  </MainContainer>
+  </MainContainer1>
   );
 }
 

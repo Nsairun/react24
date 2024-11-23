@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import logisticsImage from '../images/logistics.jpeg';
 import WriteUp from '../atoms/WriteUp';
 import Card from '../atoms/Card'
-import Services from '../atoms/Services'
+import Services from '../atoms/Services';
+import AdvertSection from '../atoms/AdvertSection'
 
 const MainContainer = styled.div`
   display: flex;
@@ -89,6 +90,7 @@ const LandingImageSection = () => {
       />
     </MainContainer>
       <Services />
+      <AdvertSection />
     </SectionContainer>
   );
 };
