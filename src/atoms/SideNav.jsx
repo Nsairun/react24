@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Orderpop from '../atoms/Orderpop';
+import TrackingPop from '../atoms/Tracking'; 
 import { FaBook, FaShuttleVan, FaCalendarAlt } from 'react-icons/fa';
 
 const SideNavbarWrapper = styled.div`
@@ -41,22 +43,48 @@ const NavLabel = styled.span`
   font-size: 14px;
 `;
 
-const SideNavbar = () => {
+const SideNavbar = ({ isLoggedIn }) => {
+  const [showOrderPopup, setShowOrderPopup] = useState(false);
+  const [showTrackingPopup, setShowTrackingPopup] = useState(false);
+
+  const handleBookingClick = () => {
+    if (isLoggedIn) {
+      setShowOrderPopup(true);
+    } else {
+      alert('Please sign in to make a booking.');
+    }
+  };
+
+  const handleTrackingClick = () => {
+    if (isLoggedIn) {
+      setShowTrackingPopup(true);
+    } else {
+      alert('Please sign in to track your goods.');
+    }
+  };
+
   return (
-    <SideNavbarWrapper>
-      <NavItem>
-        <NavIcon><FaBook /></NavIcon>
-        <NavLabel>Book</NavLabel>
-      </NavItem>
-      <NavItem>
-        <NavIcon><FaShuttleVan /></NavIcon>
-        <NavLabel>Tracking</NavLabel>
-      </NavItem>
-      <NavItem>
-        <NavIcon><FaCalendarAlt /></NavIcon>
-        <NavLabel>Schedule</NavLabel>
-      </NavItem>
-    </SideNavbarWrapper>
+    <>
+      <SideNavbarWrapper>
+        <NavItem onClick={handleBookingClick}>
+          <NavIcon><FaBook /></NavIcon>
+          <NavLabel>Book</NavLabel>
+        </NavItem>
+
+        <NavItem onClick={handleTrackingClick}> {/* Add onClick for Tracking */}
+          <NavIcon><FaShuttleVan /></NavIcon>
+          <NavLabel>Tracking</NavLabel>
+        </NavItem>
+        
+        <NavItem>
+          <NavIcon><FaCalendarAlt /></NavIcon>
+          <NavLabel>Schedule</NavLabel>
+        </NavItem>
+      </SideNavbarWrapper>
+
+      {showOrderPopup && <Orderpop onClose={() => setShowOrderPopup(false)} />}
+      {showTrackingPopup && <TrackingPop onClose={() => setShowTrackingPopup(false)} />} {/* Render TrackingPop */}
+    </>
   );
 };
 
