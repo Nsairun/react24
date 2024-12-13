@@ -1,10 +1,10 @@
-// RegistrationLoginPage.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import TextInput from "../atoms/field";
 import { FaGoogle } from "react-icons/fa";
 import logisticsImage from '../images/loginlog.png';
 import NavBar from '../orgs/NavBar';
+import { register, login } from '../orgs/Auth';
 
 const MainContainer = styled.div`
   display: flex;
@@ -79,10 +79,7 @@ const Tab = styled.button`
   border-radius: 5px;
   margin-right: 15px;
   color: ${({ active }) => (active ? "#fff" : "#666")};
-  background-color: ${({ active }) =>
-    active
-      ? "#007bff"
-      : "transparent"};
+  background-color: ${({ active }) => (active ? "#007bff" : "transparent")};
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
@@ -127,86 +124,92 @@ const GoogleButton = styled.button`
 `;
 
 const RegistrationLoginPage = () => {
- 
-  const [activeTab, setActiveTab] = useState("register"); // State to manage active tab
+  const [activeTab, setActiveTab] = useState("register");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  // Handle Registration
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await register(username, email, password);
+      alert('Registration successful!');
+    } catch (error) {
+      console.error(error);
+      alert(error.message || 'Registration failed!');
+    }
+  };
+
+  // Handle Login
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await login(loginEmail, loginPassword);
+      alert('Login successful!');
+      // Redirect or update UI as needed
+    } catch (error) {
+      console.error(error);
+      alert(error.message || 'Login failed!');
+    }
+  };
 
   return (
     <MainContainer>
       <NavBar />
-    <Container>
-      <WelcomeContainer>
-        <WelcomeText>Welcome to Our Service!</WelcomeText>
-        <p>Please register or log in to continue.</p>
-        <Image />
-      </WelcomeContainer>
-      <div>
-        <TabContainer>
-          <Tab
-            active={activeTab === "register"}
-            onClick={() => setActiveTab("register")}
-          >
-            Register
-          </Tab>
-          <Tab
-            active={activeTab === "login"}
-            onClick={() => setActiveTab("login")}
-          >
-            Login
-          </Tab>
-        </TabContainer>
+      <Container>
+        <WelcomeContainer>
+          <WelcomeText>Welcome to Our Service!</WelcomeText>
+          <p>Please register or log in to continue.</p>
+          <Image />
+        </WelcomeContainer>
+        <div>
+          <TabContainer>
+            <Tab
+              active={activeTab === "register"}
+              onClick={() => setActiveTab("register")}
+            >
+              Register
+            </Tab>
+            <Tab
+              active={activeTab === "login"}
+              onClick={() => setActiveTab("login")}
+            >
+              Login
+            </Tab>
+          </TabContainer>
 
-        {/* Registration Form */}
-        <FormContainer>
-          {activeTab === "register" && (
-            <>
-              <TextInput label="Name" id="name" placeholder="Enter your name" />
-              <TextInput
-                label="Email"
-                id="email"
-                placeholder="Enter your email"
-              />
-              <TextInput
-                label="Password"
-                id="password"
-                placeholder="Enter your password"
-                type="password"
-              />
-              <TextInput
-                label="Confirm Password"
-                id="confirm-password"
-                placeholder="Confirm your password"
-                type="password"
-              />
-              <button type="submit">Register</button>
-              <GoogleButton>Sign Up with Google</GoogleButton>{" "}
-              {/* Google Auth Button */}
-            </>
-          )}
+          {/* Registration Form */}
+          <FormContainer onSubmit={activeTab === "register" ? handleRegister : handleLogin}>
+            {activeTab === "register" && (
+              <>
+                <TextInput label="Name" id="name" placeholder="Enter your name" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <TextInput label="Email" id="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <TextInput label="Password" id="password" placeholder="Enter your password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <TextInput label="Confirm Password" id="confirm-password" placeholder="Confirm your password" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                <button type="submit">Register</button>
+                <GoogleButton>Sign Up with Google</GoogleButton>
+              </>
+            )}
 
-          {/* Login Form */}
-          {activeTab === "login" && (
-            <>
-              <TextInput
-                label="Email"
-                id="login-email"
-                placeholder="Enter your email"
-              />
-              <TextInput
-                label="Password"
-                id="login-password"
-                placeholder="Enter your password"
-                type="password"
-              />
-              <button type="submit">Login</button>
-              <GoogleButton>
-                <FaGoogle style={{ marginRight: "10px" }} /> {/* Google icon */}
-                Sign In with Google
-              </GoogleButton>
-            </>
-          )}
-        </FormContainer>
-      </div>
-    </Container>
+            {/* Login Form */}
+            {activeTab === "login" && (
+              <>
+                <TextInput label="Email" id="login-email" placeholder="Enter your email" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                <TextInput label="Password" id="login-password" placeholder="Enter your password" type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
+                <button type="submit">Login</button>
+                <GoogleButton>
+                  <FaGoogle style={{ marginRight: "10px" }} />
+                  Sign In with Google
+                </GoogleButton>
+              </>
+            )}
+          </FormContainer>
+        </div>
+      </Container>
     </MainContainer>
   );
 };
